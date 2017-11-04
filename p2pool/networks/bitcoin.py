@@ -19,7 +19,7 @@ MIN_TARGET = 0
 MAX_TARGET = 2**256//2**32 - 1
 PERSIST = False
 WORKER_PORT = 39332
-BOOTSTRAP_ADDRS = '127.0.0.1'.split(' ')
+BOOTSTRAP_ADDRS = '162.243.251.161 193.107.236.167 104.131.65.219'.split(' ')
 ANNOUNCE_CHANNEL = '#p2pool'
 VERSION_CHECK = lambda v: None if 100000 <= v else 'Bitcoin version too old. Upgrade to 0.11.2 or newer!' # not a bug. BIP65 support is ensured by SOFTFORKS_REQUIRED
 VERSION_WARNING = lambda v: None
