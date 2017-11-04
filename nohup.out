@@ -1,0 +1,2383 @@
+2017-11-03 21:47:16.728478 p2pool (version 17.0-5-g8108d8e-dirty)
+2017-11-03 21:47:16.728634 
+2017-11-03 21:47:16.728724 Testing bitcoind RPC connection to 'http://127.0.0.1:33336/' with username 'kzv_rpc'...
+2017-11-03 21:47:19.497984     ...success!
+2017-11-03 21:47:19.501715     Current block hash: 210796443e272c48ddd59ae6486487205024cc7dab4cb794679
+2017-11-03 21:47:19.501792     Current block height: 14335
+2017-11-03 21:47:19.501849 
+2017-11-03 21:47:19.502062 Testing bitcoind P2P connection to '127.0.0.1:33333'...
+2017-11-03 21:47:19.535418     ...success!
+2017-11-03 21:47:19.535555 
+2017-11-03 21:47:19.535626 Determining payout address...
+2017-11-03 21:47:19.541386     Loaded cached address: MMWPF6xP7pBGureAArJUGmxouHPMJeiHxj...
+2017-11-03 21:47:19.644639     ...success! Payout address: MMWPF6xP7pBGureAArJUGmxouHPMJeiHxj
+2017-11-03 21:47:19.644763 
+2017-11-03 21:47:19.644843 Loading shares...
+2017-11-03 21:47:19.649740     ...done loading 0 shares (0 verified)!
+2017-11-03 21:47:19.649830 
+2017-11-03 21:47:19.649875 Initializing work...
+2017-11-03 21:47:19.691777     ...success!
+2017-11-03 21:47:19.692033 
+2017-11-03 21:47:19.692107 Joining p2pool network using port 9333...
+Unhandled Error
+Traceback (most recent call last):
+Failure: twisted.internet.error.DNSLookupError: DNS lookup failed: address 'vps.forre.st' not found: [Errno -2] Name or service not known.
+
+2017-11-03 21:47:19.904584     ...success!
+2017-11-03 21:47:19.904813 
+2017-11-03 21:47:19.909808 Listening for workers on '' port 9332...
+2017-11-03 21:47:20.242947     ...success!
+2017-11-03 21:47:20.243087 
+2017-11-03 21:47:20.243137 Started successfully!
+2017-11-03 21:47:20.243187 Go to http://127.0.0.1:9332/ to view graphs and statistics!
+2017-11-03 21:47:20.243243 Donating 1.0% of work towards P2Pool's development. Thank you!
+2017-11-03 21:47:20.243294 You can increase this amount with --give-author argument! (or decrease it, if you must)
+2017-11-03 21:47:20.243357 
+2017-11-03 21:47:20.290805 Outgoing connection to peer 162.222.160.77:9333 established. p2pool version: 1700 '17.0-4-g68f653f'
+2017-11-03 21:47:23.244165 P2Pool: 0 shares in chain (0 verified/0 total) Peers: 1 (0 incoming)
+2017-11-03 21:47:23.244471  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:47:25.246574 Outgoing connection to peer 78.46.104.241:9333 established. p2pool version: 1700 '17.0-4-g68f653f'
+2017-11-03 21:47:26.161132 Requesting parent share b8e31bcd from 78.46.104.241:9333
+2017-11-03 21:47:26.244858 P2Pool: 0 shares in chain (0 verified/1 total) Peers: 2 (0 incoming)
+2017-11-03 21:47:26.245021  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:47:27.155046 Peer sent entire transaction 13f51b01180ba919459570b3da48808d3c1937b6b56f2f1d99701728a91d673c that was already received
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:27.609446 Requesting parent share b8e31bcd from 78.46.104.241:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:28.645153 Requesting parent share b8e31bcd from 78.46.104.241:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:29.182675 Requesting parent share b8e31bcd from 78.46.104.241:9333
+Error in DeferredResource handler:
+Traceback (most recent call last):
+  File "/root/p2pool/p2pool/util/deferred_resource.py", line 24, in render
+    defer.maybeDeferred(resource.Resource.render, self, request).addCallbacks(finish, finish_error)
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 150, in maybeDeferred
+    result = f(*args, **kw)
+  File "/usr/lib/python2.7/dist-packages/twisted/web/resource.py", line 250, in render
+    return m(request)
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1274, in unwindGenerator
+    return _inlineCallbacks(None, gen, Deferred())
+--- <exception caught here> ---
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+    result = g.send(result)
+  File "/root/p2pool/p2pool/web.py", line 198, in render_GET
+    res = yield self.func(*self.args)
+  File "/root/p2pool/p2pool/web.py", line 347, in <lambda>
+    new_root.putChild('best_share_hash', WebInterface(lambda: '%064x' % node.best_share_var.value))
+exceptions.TypeError: %x format: a number is required, not NoneType
+
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:32.179459 Requesting parent share b8e31bcd from 78.46.104.241:9333
+2017-11-03 21:47:32.610649 Outgoing connection to peer 144.217.87.193:9333 established. p2pool version: 1700 'c0fdd06'
+2017-11-03 21:47:32.998301 Peer sent entire transaction 13f51b01180ba919459570b3da48808d3c1937b6b56f2f1d99701728a91d673c that was already received
+2017-11-03 21:47:35.246645 P2Pool: 0 shares in chain (0 verified/1 total) Peers: 3 (0 incoming)
+2017-11-03 21:47:35.247431  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:36.551695 Requesting parent share b8e31bcd from 78.46.104.241:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:38.172131 Requesting parent share b8e31bcd from 78.46.104.241:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:39.602417 Requesting parent share b8e31bcd from 162.222.160.77:9333
+2017-11-03 21:47:39.866592 Outgoing connection to peer 178.63.18.3:9333 established. p2pool version: 1700 '17.0-4-g68f653f'
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:40.603660 Requesting parent share b8e31bcd from 178.63.18.3:9333
+2017-11-03 21:47:41.248596 P2Pool: 0 shares in chain (0 verified/1 total) Peers: 4 (0 incoming)
+2017-11-03 21:47:41.248896  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:47:42.815047 Peer sent entire transaction 13f51b01180ba919459570b3da48808d3c1937b6b56f2f1d99701728a91d673c that was already received
+2017-11-03 21:47:43.046944 Peer sent entire transaction 7705dd095123265591aaaca242d29ef4b7970acb331048f85ecf378b7f743441 that was already received
+2017-11-03 21:47:43.063510 Peer sent entire transaction 7705dd095123265591aaaca242d29ef4b7970acb331048f85ecf378b7f743441 that was already received
+2017-11-03 21:47:43.416978 Peer 178.63.18.3:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:47:43.417296 Bad peer banned: (u'178.63.18.3', 9333)
+2017-11-03 21:47:43.419812 Lost peer 178.63.18.3:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:47:43.420898 Requesting parent share b8e31bcd from 78.46.104.241:9333
+2017-11-03 21:47:44.249327 P2Pool: 0 shares in chain (0 verified/1 total) Peers: 3 (0 incoming)
+2017-11-03 21:47:44.249607  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:44.470460 Requesting parent share b8e31bcd from 78.46.104.241:9333
+2017-11-03 21:47:45.428922 Outgoing connection to peer 198.27.65.149:9333 established. p2pool version: 1700 '17.1'
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:47:46.778051 Requesting parent share b8e31bcd from 78.46.104.241:9333
+2017-11-03 21:47:47.285703 Peer sent entire transaction 13f51b01180ba919459570b3da48808d3c1937b6b56f2f1d99701728a91d673c that was already received
+2017-11-03 21:47:47.558753 P2Pool: 0 shares in chain (0 verified/2 total) Peers: 4 (0 incoming)
+2017-11-03 21:47:47.558921  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:47:49.887776 Peer 78.46.104.241:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:47:49.887991 Bad peer banned: (u'78.46.104.241', 9333)
+2017-11-03 21:47:49.890509 Lost peer 78.46.104.241:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:47:49.891570 Requesting parent share b8e31bcd from 144.217.87.193:9333
+2017-11-03 21:47:50.609692 Peer 144.217.87.193:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:47:50.610110 Bad peer banned: (u'144.217.87.193', 9333)
+2017-11-03 21:47:50.612543 P2Pool: 0 shares in chain (0 verified/2 total) Peers: 3 (0 incoming)
+2017-11-03 21:47:50.612622  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:47:50.616264 Lost peer 144.217.87.193:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:47:50.616758 Requesting parent share b8e31bcd from 162.222.160.77:9333
+2017-11-03 21:47:52.190241 Peer 62.210.213.17:9333 misbehaving, will drop and ban. Reason: peer too old
+2017-11-03 21:47:52.190559 Bad peer banned: (u'62.210.213.17', 9333)
+2017-11-03 21:47:52.191223 Peer 62.210.213.17:9333 misbehaving, will drop and ban. Reason: first message was not version message
+2017-11-03 21:47:52.191393 Bad peer banned: (u'62.210.213.17', 9333)
+2017-11-03 21:47:52.191781 Peer 62.210.213.17:9333 misbehaving, will drop and ban. Reason: first message was not version message
+2017-11-03 21:47:52.191939 Bad peer banned: (u'62.210.213.17', 9333)
+2017-11-03 21:47:53.612957 P2Pool: 0 shares in chain (0 verified/2 total) Peers: 2 (0 incoming)
+2017-11-03 21:47:53.613222  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:47:55.750431 Peer 162.222.160.77:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:47:55.750985 Bad peer banned: (u'162.222.160.77', 9333)
+2017-11-03 21:47:55.757135 Lost peer 162.222.160.77:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:47:55.764882 Requesting parent share b8e31bcd from 198.27.65.149:9333
+2017-11-03 21:47:56.613739 P2Pool: 0 shares in chain (0 verified/2 total) Peers: 1 (0 incoming)
+2017-11-03 21:47:56.613947  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:48:00.432197 Transaction b44d9e70186b73872d1dbae71fc6ba4da5c841a7d8adcb5077dc9b28a18fbe6e rescued from peer latency cache!
+2017-11-03 21:48:00.432606 Transaction 4191c5a5221325bd28a27588f7886cddec5c580a75e187eb8da7fbd0fac767c4 rescued from peer latency cache!
+2017-11-03 21:48:00.432772 Transaction 0de7477f04fbd3e76c070836685a1c1c33e33f84c7c0474883178641ba25f772 rescued from peer latency cache!
+2017-11-03 21:48:00.432926 Transaction b74596e5f7d2473b225d8cfd823783e177cb72711e477e77c499a78f73560f4e rescued from peer latency cache!
+2017-11-03 21:48:00.433092 Transaction 7058a446888dc9fff591ff06837a046a556f3098951eea25cc915f00d8e5b6d9 rescued from peer latency cache!
+2017-11-03 21:48:00.433441 Transaction 16748855d33b47fba58172a987bdb928334f21ad2a6ce253d012335d3850a882 rescued from peer latency cache!
+2017-11-03 21:48:00.437870 Transaction 4122e331cb280cdd1680650dd133509aa0d6851bbe8c2b15975be16a6e1cb66d rescued from peer latency cache!
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:00.452659 Requesting parent share b8e31bcd from 198.27.65.149:9333
+2017-11-03 21:48:02.920663 Peer 198.27.65.149:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:48:02.921040 Bad peer banned: (u'198.27.65.149', 9333)
+2017-11-03 21:48:02.923512 Lost peer 198.27.65.149:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:48:05.451479 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:48:05.926113 Requesting parent share b8e31bcd from 188.0.182.10:9333
+2017-11-03 21:48:11.625007 P2Pool: 0 shares in chain (0 verified/2 total) Peers: 1 (0 incoming)
+2017-11-03 21:48:11.625420  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 21:48:20.457358 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:48:20.628591 P2Pool: 0 shares in chain (0 verified/2 total) Peers: 0 (0 incoming)
+2017-11-03 21:48:20.628836  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+Unhandled Error
+Traceback (most recent call last):
+  File "/root/p2pool/p2pool/main.py", line 675, in run
+    reactor.run()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 1194, in run
+    self.mainLoop()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 1203, in mainLoop
+    self.runUntilCurrent()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 825, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/bitcoin/stratum.py", line 38, in _send_work
+    x, got_response = self.wb.get_work(*self.wb.preprocess_request('' if self.username is None else self.username))
+  File "/root/p2pool/p2pool/work.py", line 210, in preprocess_request
+    raise jsonrpc.Error_for_code(-12345)(u'p2pool is not connected to any peers')
+p2pool.util.jsonrpc.NarrowError: -12345 p2pool is not connected to any peers
+
+2017-11-03 21:48:33.522041 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:48:34.869913 Requesting parent share b8e31bcd from 194.187.217.34:9333
+2017-11-03 21:48:34.883875 RECV sharereply ce7715433577fbe265aa900bbb39deb9eb1372ecebade122830416640f647258000110fde715fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d00000000000000000010e4fc59bdc1001864bcea7e4f9bdb7449922c98fa3611acc3...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:48:34.888237 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:48:35.307886 Outgoing connection to peer 159.203.103.178:9333 established. p2pool version: 1700 '17.0-4-g68f653f'
+2017-11-03 21:48:35.630700 P2Pool: 0 shares in chain (0 verified/2 total) Peers: 1 (0 incoming)
+2017-11-03 21:48:35.630896  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:48:35.932234 Requesting parent share b8e31bcd from 159.203.103.178:9333
+2017-11-03 21:48:41.582113 Transaction 05c5338722903a86e05e199707d464d236eda855f152161937d0f74ecfa2713b rescued from peer latency cache!
+2017-11-03 21:48:41.582642 Transaction b6f0dbb52aac8398967b0c966bb6ac2e324ad1dd4432c1e5f22ffef246bcc110 rescued from peer latency cache!
+2017-11-03 21:48:41.582819 Transaction cc0490efb345c1edbc81b8516770b98da99a47aef3c3a2a4545db8f6f815e8fa rescued from peer latency cache!
+2017-11-03 21:48:41.582972 Transaction 9fbe1094aafb73194eb58b09ed16f6ef368074ced665c6a5648ac407bb3c0424 rescued from peer latency cache!
+2017-11-03 21:48:41.583248 Transaction 3310de78460550cac7815d295c15cda08d26c29d5ddf804e73a30d92e34db4ce rescued from peer latency cache!
+2017-11-03 21:48:41.583417 Transaction 571601ed95c0af23492970b461c4063f1ff79735fa896431c402b0348f31fb04 rescued from peer latency cache!
+2017-11-03 21:48:41.585783 Transaction 30c45abc9c48b7c874c47188663fcf4b24df14c229c551a51362d055a3762664 rescued from peer latency cache!
+2017-11-03 21:48:41.585933 Transaction ea513c1544931bc8b24dfbb6403e0e8441d20a32232d3700166c54c7728e1d44 rescued from peer latency cache!
+2017-11-03 21:48:41.586063 Transaction d682a6408fe436ae95cb3883a11c949f371eab42aca01d525dc5e63c4182035c rescued from peer latency cache!
+2017-11-03 21:48:41.586238 Transaction 9b83dfcc32f3aafe2589ae5ed572e407ed2a8fa19e5b9f57fea615b4a299f385 rescued from peer latency cache!
+2017-11-03 21:48:41.586387 Transaction aa34a91faf0f22e353aff1639456172ff3bf654d3419b76d7f6356e306d48582 rescued from peer latency cache!
+2017-11-03 21:48:41.586534 Transaction bf03d6aba18818882ffd0b5e18effd3dc4eb19a217574e7a757ae39e855901f4 rescued from peer latency cache!
+2017-11-03 21:48:41.586674 Transaction adde7fc9816c3410a9bb1ee656b3dce9bb1b176c8c764bf5bbdaf9118328160c rescued from peer latency cache!
+2017-11-03 21:48:41.586992 Transaction 421ed7133d40f6b7958aaf1f2290999a4315502df1ef2401f3ed52f7170e92b1 rescued from peer latency cache!
+2017-11-03 21:48:41.587161 Transaction 5c8de9d71d4f319c162aea14042bc4f92d72350f38f0df3da4665ac0265754ad rescued from peer latency cache!
+2017-11-03 21:48:41.587305 Transaction 6664b5ef99f015e374d788a78b724079e34785f935a25979789b4a5f8d9b968a rescued from peer latency cache!
+2017-11-03 21:48:41.587447 Transaction f898cdfc595953828f292dd8b77b03ac2818abb5df6ce964ab0dd8a239330c50 rescued from peer latency cache!
+2017-11-03 21:48:41.587592 Transaction 9fdd5fc05151193fd288e378e8cb21b0ded850666f38eb8a93c1d5bc1971d742 rescued from peer latency cache!
+2017-11-03 21:48:41.587715 Transaction 29b2a4a7f7ec321a6f6557c979bc2121fd536065b3375bdc94820eadc5c366a5 rescued from peer latency cache!
+2017-11-03 21:48:41.587860 Transaction 37f28e21082cb70e6c890dcc7773ac84ed3d942d27f141e0117a7a2eb87d8825 rescued from peer latency cache!
+2017-11-03 21:48:41.588022 Transaction a7bdc855167e2412750fa267fb59e9572ca048cf231e99d7e2db654f97257c32 rescued from peer latency cache!
+2017-11-03 21:48:41.588202 Transaction b99412d9458cf94542b6125f52d7334d8743b6356aabf5eb6e8b81d1196b334b rescued from peer latency cache!
+2017-11-03 21:48:41.588347 Transaction d4b4ef8e4191a0350718525e4ef96cc761dd76fe2792d7714934abf37aa16a84 rescued from peer latency cache!
+2017-11-03 21:48:41.588556 Transaction 2fefccad3b66f90140343f7019708f6d6c9afb6ba6aa6bdb8e7f0a7fe344623f rescued from peer latency cache!
+2017-11-03 21:48:41.588718 Transaction 90d32f3ace1118505aaa9631559d43bb74a7b8811618d12ef51a9a6c0b212740 rescued from peer latency cache!
+2017-11-03 21:48:41.588865 Transaction 9b1fa62ea420bc9f77757e189131c93f7b8d09d32310e78798668e3b9be0c39a rescued from peer latency cache!
+2017-11-03 21:48:41.589027 Transaction 3bee6bd81d8df4b9c8753040dc3626280521517cc9d22ca37d127a5ee21beecb rescued from peer latency cache!
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:41.598916 Requesting parent share b8e31bcd from 159.203.103.178:9333
+2017-11-03 21:48:41.615561 Transaction 05c5338722903a86e05e199707d464d236eda855f152161937d0f74ecfa2713b rescued from peer latency cache!
+2017-11-03 21:48:41.615780 Transaction b6f0dbb52aac8398967b0c966bb6ac2e324ad1dd4432c1e5f22ffef246bcc110 rescued from peer latency cache!
+2017-11-03 21:48:41.615906 Transaction cc0490efb345c1edbc81b8516770b98da99a47aef3c3a2a4545db8f6f815e8fa rescued from peer latency cache!
+2017-11-03 21:48:41.616040 Transaction 9fbe1094aafb73194eb58b09ed16f6ef368074ced665c6a5648ac407bb3c0424 rescued from peer latency cache!
+2017-11-03 21:48:41.616175 Transaction 3310de78460550cac7815d295c15cda08d26c29d5ddf804e73a30d92e34db4ce rescued from peer latency cache!
+2017-11-03 21:48:41.616303 Transaction 571601ed95c0af23492970b461c4063f1ff79735fa896431c402b0348f31fb04 rescued from peer latency cache!
+2017-11-03 21:48:41.616444 Transaction 30c45abc9c48b7c874c47188663fcf4b24df14c229c551a51362d055a3762664 rescued from peer latency cache!
+2017-11-03 21:48:41.616566 Transaction ea513c1544931bc8b24dfbb6403e0e8441d20a32232d3700166c54c7728e1d44 rescued from peer latency cache!
+2017-11-03 21:48:41.616694 Transaction d682a6408fe436ae95cb3883a11c949f371eab42aca01d525dc5e63c4182035c rescued from peer latency cache!
+2017-11-03 21:48:41.616823 Transaction 9b83dfcc32f3aafe2589ae5ed572e407ed2a8fa19e5b9f57fea615b4a299f385 rescued from peer latency cache!
+2017-11-03 21:48:41.616971 Transaction aa34a91faf0f22e353aff1639456172ff3bf654d3419b76d7f6356e306d48582 rescued from peer latency cache!
+2017-11-03 21:48:41.617109 Transaction bf03d6aba18818882ffd0b5e18effd3dc4eb19a217574e7a757ae39e855901f4 rescued from peer latency cache!
+2017-11-03 21:48:41.617266 Transaction 421ed7133d40f6b7958aaf1f2290999a4315502df1ef2401f3ed52f7170e92b1 rescued from peer latency cache!
+2017-11-03 21:48:41.617385 Transaction 5c8de9d71d4f319c162aea14042bc4f92d72350f38f0df3da4665ac0265754ad rescued from peer latency cache!
+2017-11-03 21:48:41.617530 Transaction adde7fc9816c3410a9bb1ee656b3dce9bb1b176c8c764bf5bbdaf9118328160c rescued from peer latency cache!
+2017-11-03 21:48:41.617655 Transaction 6664b5ef99f015e374d788a78b724079e34785f935a25979789b4a5f8d9b968a rescued from peer latency cache!
+2017-11-03 21:48:41.617834 Transaction f898cdfc595953828f292dd8b77b03ac2818abb5df6ce964ab0dd8a239330c50 rescued from peer latency cache!
+2017-11-03 21:48:41.617937 Transaction 9fdd5fc05151193fd288e378e8cb21b0ded850666f38eb8a93c1d5bc1971d742 rescued from peer latency cache!
+2017-11-03 21:48:41.618049 Transaction 29b2a4a7f7ec321a6f6557c979bc2121fd536065b3375bdc94820eadc5c366a5 rescued from peer latency cache!
+2017-11-03 21:48:41.618186 Transaction 37f28e21082cb70e6c890dcc7773ac84ed3d942d27f141e0117a7a2eb87d8825 rescued from peer latency cache!
+2017-11-03 21:48:41.618303 Transaction a7bdc855167e2412750fa267fb59e9572ca048cf231e99d7e2db654f97257c32 rescued from peer latency cache!
+2017-11-03 21:48:41.618420 Transaction b99412d9458cf94542b6125f52d7334d8743b6356aabf5eb6e8b81d1196b334b rescued from peer latency cache!
+2017-11-03 21:48:41.618545 Transaction d4b4ef8e4191a0350718525e4ef96cc761dd76fe2792d7714934abf37aa16a84 rescued from peer latency cache!
+2017-11-03 21:48:41.618682 Transaction 2fefccad3b66f90140343f7019708f6d6c9afb6ba6aa6bdb8e7f0a7fe344623f rescued from peer latency cache!
+2017-11-03 21:48:41.618808 Transaction 90d32f3ace1118505aaa9631559d43bb74a7b8811618d12ef51a9a6c0b212740 rescued from peer latency cache!
+2017-11-03 21:48:41.618978 Transaction 9b1fa62ea420bc9f77757e189131c93f7b8d09d32310e78798668e3b9be0c39a rescued from peer latency cache!
+2017-11-03 21:48:41.651508 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 1 (0 incoming)
+2017-11-03 21:48:41.651662  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:41.739087 Requesting parent share b8e31bcd from 159.203.103.178:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:41.914700 Requesting parent share b8e31bcd from 159.203.103.178:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:42.131500 Requesting parent share b8e31bcd from 159.203.103.178:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:42.619602 Requesting parent share b8e31bcd from 159.203.103.178:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:42.795611 Requesting parent share b8e31bcd from 159.203.103.178:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:42.866646 Requesting parent share b8e31bcd from 159.203.103.178:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:43.082544 Requesting parent share b8e31bcd from 159.203.103.178:9333
+2017-11-03 21:48:49.793430 Peer 159.203.103.178:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:48:49.793865 Bad peer banned: (u'159.203.103.178', 9333)
+2017-11-03 21:48:49.796570 Lost peer 159.203.103.178:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:48:50.654644 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 0 (0 incoming)
+2017-11-03 21:48:50.655114  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:48:52.834477 Outgoing connection to peer 212.45.19.162:9333 established. p2pool version: 1700 '15.0-33-g519486f-dirty'
+2017-11-03 21:48:53.659179 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 1 (0 incoming)
+2017-11-03 21:48:53.659363  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:48:53.802011 Requesting parent share b8e31bcd from 212.45.19.162:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:55.292798 Requesting parent share b8e31bcd from 212.45.19.162:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:56.135877 Requesting parent share b8e31bcd from 212.45.19.162:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:56.694744 Requesting parent share b8e31bcd from 212.45.19.162:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:56.909352 Requesting parent share b8e31bcd from 212.45.19.162:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:57.132511 Requesting parent share b8e31bcd from 212.45.19.162:9333
+in download_shares:
+Traceback (most recent call last):
+Failure: p2pool.p2p.ShareReplyError: too long
+
+2017-11-03 21:48:57.401916 Requesting parent share b8e31bcd from 212.45.19.162:9333
+2017-11-03 21:49:00.051391 Peer 212.45.19.162:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:49:00.051645 Bad peer banned: (u'212.45.19.162', 9333)
+2017-11-03 21:49:00.054854 Lost peer 212.45.19.162:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:49:02.697403 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 0 (0 incoming)
+2017-11-03 21:49:02.697831  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:49:17.704829 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 0 (0 incoming)
+2017-11-03 21:49:17.705579  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+Error in DeferredResource handler:
+Traceback (most recent call last):
+  File "/root/p2pool/p2pool/util/deferred_resource.py", line 24, in render
+    defer.maybeDeferred(resource.Resource.render, self, request).addCallbacks(finish, finish_error)
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 150, in maybeDeferred
+    result = f(*args, **kw)
+  File "/usr/lib/python2.7/dist-packages/twisted/web/resource.py", line 250, in render
+    return m(request)
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1274, in unwindGenerator
+    return _inlineCallbacks(None, gen, Deferred())
+--- <exception caught here> ---
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+    result = g.send(result)
+  File "/root/p2pool/p2pool/web.py", line 198, in render_GET
+    res = yield self.func(*self.args)
+  File "/root/p2pool/p2pool/web.py", line 347, in <lambda>
+    new_root.putChild('best_share_hash', WebInterface(lambda: '%064x' % node.best_share_var.value))
+exceptions.TypeError: %x format: a number is required, not NoneType
+
+2017-11-03 21:49:22.939831 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:49:23.069877 Requesting parent share b8e31bcd from 194.187.217.34:9333
+2017-11-03 21:49:23.759957 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 1 (0 incoming)
+2017-11-03 21:49:23.760131  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:49:24.827348 RECV sharereply be44482bb7cd76269da0fb500f75f3b8ac754dcb43b76faa418dbc6f6ee4bf11000110fda71cfe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d0000000000000000003de4fc59bdc100181a6ba38197e338492a892ec802c2515df1...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:49:24.828880 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:49:26.760613 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 0 (0 incoming)
+2017-11-03 21:49:26.760940  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:49:41.766310 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 0 (0 incoming)
+2017-11-03 21:49:41.766741  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:49:43.141197 Outgoing connection to peer 72.14.191.28:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:49:43.833932 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:44.767857 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 1 (0 incoming)
+2017-11-03 21:49:44.768295  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:49:44.876823 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:45.925393 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:46.968069 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:48.009837 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:49.053255 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:50.095967 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:51.138083 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:52.179298 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:53.222871 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:54.264370 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:55.305720 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:56.346383 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:57.388205 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:58.429828 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:59.471242 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:49:59.770466 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 1 (0 incoming)
+2017-11-03 21:49:59.770777  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:50:00.512800 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:01.554914 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:02.596813 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:03.639201 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:04.686121 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:05.730872 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:06.772141 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:07.813727 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:08.855413 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:09.900013 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:10.941150 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:11.982631 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:13.025270 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:14.066772 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:14.773521 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 1 (0 incoming)
+2017-11-03 21:50:14.773874  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:50:15.133430 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:16.176382 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:17.220992 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:18.264180 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:19.305646 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:20.347115 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:20.430906 Outgoing connection to peer 60.250.199.141:9333 established. p2pool version: 1700 '17.0'
+2017-11-03 21:50:20.606681 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:50:20.774619 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 3 (0 incoming)
+2017-11-03 21:50:20.774936  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:50:21.775002 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:21.797882 RECV sharereply 327937f293ae1e55f271b4bbfb5b407e8438f868096a375105adbe5a818f2386000110fd411efe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d0000000000000000007de4fc59bdc100184bcb820e489ac17c62761f40c870011b86...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:50:21.811160 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:50:22.926662 Requesting parent share b8e31bcd from 60.250.199.141:9333
+2017-11-03 21:50:23.775617 P2Pool: 0 shares in chain (0 verified/3 total) Peers: 2 (0 incoming)
+2017-11-03 21:50:23.775951  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:50:34.305027 Peer 60.250.199.141:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:50:34.305425 Bad peer banned: (u'60.250.199.141', 9333)
+2017-11-03 21:50:34.308322 Lost peer 60.250.199.141:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:50:34.310227 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:35.389306 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:35.777293 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:50:35.777523  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:50:36.431682 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:37.474145 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:37.601109 Peer 162.243.251.161:45184 misbehaving, will drop and ban. Reason: was connected to self
+2017-11-03 21:50:37.601283 Bad peer banned: ('162.243.251.161', 45184)
+2017-11-03 21:50:37.602006 Peer 162.243.251.161:9333 misbehaving, will drop and ban. Reason: was connected to self
+2017-11-03 21:50:37.602099 Bad peer banned: (u'162.243.251.161', 9333)
+2017-11-03 21:50:38.517439 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:39.562699 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:40.603663 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:41.644973 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:42.687560 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:43.731274 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:44.773264 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:45.815176 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:46.856271 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:47.902087 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:48.945578 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:49.987595 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:50.784578 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:50:50.784776  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:50:51.033079 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:52.074846 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:53.117341 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:54.160007 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:55.230703 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:56.272169 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:50:57.314870 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:58.356952 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:50:59.398469 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:00.440725 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:01.485063 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:02.526775 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:03.567912 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:04.609810 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:05.651806 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:05.788302 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:51:05.788534  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:51:06.694229 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:07.736797 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:08.784095 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:09.832529 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:10.880115 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:11.921266 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:12.964971 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:14.008230 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:15.050124 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:16.091501 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:17.136026 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:18.178060 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:19.219455 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:20.260453 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:20.791373 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:51:20.791754  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:51:21.303725 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:22.345882 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:23.387409 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:24.458931 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:25.500311 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:26.542563 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:27.583619 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:28.626310 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:29.667623 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:30.708918 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:31.750036 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:32.791913 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:33.834914 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:34.877342 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:35.794090 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:51:35.794285  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:51:35.919555 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:36.991481 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:38.034046 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:39.075679 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:40.122054 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:41.168272 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:42.211905 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:43.256898 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:44.299310 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:45.341361 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:46.383197 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:47.426963 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:48.469162 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:49.511444 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:50.555028 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:50.796274 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:51:50.796462  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:51:51.596739 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:52.643611 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:53.686786 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:54.728066 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:55.770878 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:56.812270 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:57.854457 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:51:58.897010 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:51:59.938528 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:02.259725 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:03.302547 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:04.344152 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:05.386008 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:05.801545 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:52:05.801728  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:52:06.428363 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:07.470031 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:08.512904 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:09.557875 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:10.484271 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:52:10.600003 Requesting parent share 3090acd6 from 188.0.182.10:9333
+2017-11-03 21:52:11.802906 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 2 (0 incoming)
+2017-11-03 21:52:11.803291  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:52:15.836268 Incoming connection from peer 108.20.157.110:42342 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:52:17.850392 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 3 (1 incoming)
+2017-11-03 21:52:17.850641  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:52:17.861178 RECV sharereply 018d9962e7371e74e6f4b7f14986ba2f46113c5092b0edc99a61da986adc5da7000110fda515fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d000000000000000000f8e4fc59bdc100188faed8e1995ac9c4aa01f1997cf464542e...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:52:17.876297 Lost peer 108.20.157.110:42342 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:52:20.850911 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 2 (0 incoming)
+2017-11-03 21:52:20.851114  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+Error in DeferredResource handler:
+Traceback (most recent call last):
+  File "/root/p2pool/p2pool/util/deferred_resource.py", line 24, in render
+    defer.maybeDeferred(resource.Resource.render, self, request).addCallbacks(finish, finish_error)
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 150, in maybeDeferred
+    result = f(*args, **kw)
+  File "/usr/lib/python2.7/dist-packages/twisted/web/resource.py", line 250, in render
+    return m(request)
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1274, in unwindGenerator
+    return _inlineCallbacks(None, gen, Deferred())
+--- <exception caught here> ---
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+    result = g.send(result)
+  File "/root/p2pool/p2pool/web.py", line 198, in render_GET
+    res = yield self.func(*self.args)
+  File "/root/p2pool/p2pool/web.py", line 347, in <lambda>
+    new_root.putChild('best_share_hash', WebInterface(lambda: '%064x' % node.best_share_var.value))
+exceptions.TypeError: %x format: a number is required, not NoneType
+
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 21:52:25.502507 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:52:25.503379 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:26.546605 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:26.851549 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:52:26.851717  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:52:27.588720 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:28.633973 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:29.676443 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:30.763492 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:31.848430 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:32.892135 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:33.933872 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:34.975337 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:36.017173 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:37.059874 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:38.101804 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:39.147542 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:40.194067 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:41.239007 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:41.855330 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:52:41.855528  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:52:41.962685 Incoming connection from peer 24.53.49.199:56880 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:52:42.280534 Requesting parent share 3090acd6 from 24.53.49.199:56880
+2017-11-03 21:52:43.197182 RECV sharereply 23e10576f023dfceaa64d17c9017b2e1358f7eb89a3705cbf8ec231d634b69c2000110fd8511fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d000000000000000000f8e4fc59bdc1001829fe1f774ac8bc63dfcf2d6e8975ce3af1...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:52:43.498204 Lost peer 24.53.49.199:56880 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:52:44.199730 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:45.241538 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:46.282604 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:47.324153 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:48.365431 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:49.407036 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:50.448160 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:51.489304 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:52.530551 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:53.572491 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:52:54.613876 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:55.668137 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:56.144977 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:52:56.709348 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:56.857025 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 2 (0 incoming)
+2017-11-03 21:52:56.857226  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:52:57.750816 Requesting parent share b8e31bcd from 194.187.217.34:9333
+2017-11-03 21:52:58.585242 RECV sharereply 2d10e805bf745def9926c7337e6e014876774133687a2c839ae840bcf9da4205000110fd8511fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d000000000000000000f8e4fc59bdc1001829fe1f774ac8bc63dfcf2d6e8975ce3af1...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:52:58.589381 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:52:59.593721 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:52:59.861631 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:52:59.861784  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:53:00.634629 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:01.677212 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:02.720157 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:02.738497 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:53:02.862329 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 2 (0 incoming)
+2017-11-03 21:53:02.862605  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:53:04.191747 Requesting parent share 3090acd6 from 194.187.217.34:9333
+2017-11-03 21:53:04.202124 RECV sharereply 1ffaf6d67604902d622fac9a16a7a42926bae2162b9d2aef5b4957c024f761c1000110fd8511fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d000000000000000000f8e4fc59bdc1001829fe1f774ac8bc63dfcf2d6e8975ce3af1...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:53:04.209150 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:53:04.210028 Requesting parent share 3090acd6 from 72.14.191.28:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:53:05.329269 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:05.863012 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:53:05.863390  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:53:06.370789 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:07.509135 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:08.555013 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:09.597092 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:10.640409 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:11.682185 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:12.725266 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:13.767013 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:14.809680 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:15.851287 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:16.895338 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:17.938485 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:18.983380 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:20.024755 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:20.867809 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:53:20.868073  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:53:21.067033 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:22.108465 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:23.151669 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:24.205521 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:25.247882 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:26.293695 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:27.334622 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:28.437198 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:29.479461 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:30.526519 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:31.569379 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:32.620421 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:33.663193 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:34.705220 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:35.749504 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:35.870643 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 1 (0 incoming)
+2017-11-03 21:53:35.870832  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:53:36.790792 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:37.832429 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:38.874852 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:39.923189 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:40.965541 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:42.007720 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:43.049672 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:44.092658 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:45.134448 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:45.712930 Outgoing connection to peer 195.208.39.210:9333 established. p2pool version: 1600 '16.0'
+2017-11-03 21:53:46.176180 Requesting parent share b8e31bcd from 195.208.39.210:9333
+2017-11-03 21:53:47.877753 P2Pool: 0 shares in chain (0 verified/4 total) Peers: 2 (0 incoming)
+2017-11-03 21:53:47.877960  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:53:50.281794 RECV sharereply 4979d4b9267e4a393e8b29b7272d1859d081465acba1d57defd652f92ae13de8000110fd5402fe02000020f87f1bbbb941805e017049cbe57300f1758c5f5e98798e000000000000000000be055d59308d01189fce1937c346e1a029006a5f6899c14df6...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:53:50.320097 Lost peer 195.208.39.210:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:53:50.919933 Outgoing connection to peer 185.24.97.11:9333 established. p2pool version: 1700 '17.0-4-g68f653f-dirty'
+2017-11-03 21:53:51.399019 Requesting parent share 3090acd6 from 185.24.97.11:9333
+2017-11-03 21:53:51.767355 Peer sent entire transaction 3327d875ff6e37a823ac817641d3661b2d69c9f8c8b8575544c42cdcf3879db0 that was already received
+2017-11-03 21:53:52.238384 Peer 185.24.97.11:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:53:52.238605 Bad peer banned: (u'185.24.97.11', 9333)
+2017-11-03 21:53:52.247067 Lost peer 185.24.97.11:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:53:52.247672 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:53:53.370415 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:53:53.964920 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:53:53.965104  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:53:54.301702 Outgoing connection to peer 80.64.65.87:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:53:54.412186 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:53:55.226295 Peer sent entire transaction 13f51b01180ba919459570b3da48808d3c1937b6b56f2f1d99701728a91d673c that was already received
+2017-11-03 21:53:55.785097 Requesting parent share 3090acd6 from 80.64.65.87:9333
+2017-11-03 21:53:55.811040 RECV sharereply b0b07b20241e172359f59524e0d31dc7c4d8c42a575cc2d41a4760fa1d05ac94000110fdfd17fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d00000000000000000065e5fc59bdc10018f3aef5395c3baa9ae9a04a01b763f142fb...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:53:55.819113 Lost peer 80.64.65.87:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:53:55.819705 Requesting parent share 3090acd6 from 72.14.191.28:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:53:56.890853 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:53:57.934453 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:53:58.978206 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:00.019671 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:01.063236 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:02.104892 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:03.146856 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:04.190606 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:05.233113 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:06.275491 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:07.318965 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:08.360875 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:08.967548 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:54:08.967726  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:54:09.404510 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:10.460861 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:11.568518 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:12.609975 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:13.652930 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:14.694904 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:15.736717 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:16.780468 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:54:17.825930 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:18.867708 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:19.911817 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:20.473813 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:54:20.957523 Requesting parent share 3090acd6 from 188.0.182.10:9333
+2017-11-03 21:54:20.969428 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:54:20.969671  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 21:54:35.479373 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:54:35.479917 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:54:35.651419 Outgoing connection to peer 176.28.50.57:10333 established. p2pool version: 1700 '17.0'
+2017-11-03 21:54:35.972731 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:54:35.973275  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:54:37.583550 Requesting parent share 3090acd6 from 176.28.50.57:10333
+2017-11-03 21:54:37.593449 Peer 176.28.50.57:10333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:54:37.593609 Bad peer banned: ('176.28.50.57', 10333)
+2017-11-03 21:54:37.595546 Lost peer 176.28.50.57:10333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:54:37.596470 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:54:38.720046 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:54:39.146919 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:54:39.147107  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:54:39.761625 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:40.802923 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:41.844429 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:42.886600 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:43.596523 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:54:43.929879 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:54:44.972810 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:54:45.148902 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:54:45.149136  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:54:46.019558 Requesting parent share 3090acd6 from 188.0.182.10:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 21:54:58.602434 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:54:58.603105 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:54:59.666600 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:00.152307 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:55:00.152689  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:55:02.159024 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:03.201573 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:04.243417 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:05.286010 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:06.330670 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:07.372049 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:08.413953 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:09.456746 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:10.498763 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:11.085609 Outgoing connection to peer 82.117.166.77:9333 established. p2pool version: 1700 '15.0-33-g519486f-dirty'
+2017-11-03 21:55:11.550809 Requesting parent share 3090acd6 from 82.117.166.77:9333
+2017-11-03 21:55:12.154582 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:55:12.155053  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:55:12.919668 Peer 82.117.166.77:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:55:12.919843 Bad peer banned: ('82.117.166.77', 9333)
+2017-11-03 21:55:12.936761 Peer 82.117.166.77:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:55:12.936848 Bad peer banned: ('82.117.166.77', 9333)
+2017-11-03 21:55:12.941651 Lost peer 82.117.166.77:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:55:12.943950 Requesting parent share 3090acd6 from 72.14.191.28:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:55:14.063821 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:15.349756 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:15.351083 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:55:15.351159  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:55:16.396890 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:17.438754 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:18.480552 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:19.524592 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:20.570398 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:21.613675 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:22.655590 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:23.730823 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:24.772065 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:25.817809 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:26.859028 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:27.906661 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:28.951942 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:29.994151 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:30.357401 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:55:30.357748  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:55:31.035929 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:32.078512 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:33.130042 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:33.543803 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:55:34.182011 Requesting parent share 3090acd6 from 188.0.182.10:9333
+2017-11-03 21:55:36.362083 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:55:36.362658  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:55:44.284441 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:55:46.131752 RECV sharereply a3f406d3ca7c7b6b38f960c98dbc54296fdf287f6e64f800803a6866f50bf178000110fde116fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d00000000000000000074e5fc59bdc1001870e192d3a54c2011b90f26506b990b0ef8...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:55:46.139079 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 3 (0 incoming)
+2017-11-03 21:55:46.139179  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:55:46.147042 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 21:55:48.547401 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:55:48.548168 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:49.140761 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:55:49.141370  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:55:49.594669 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:50.638395 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:51.680523 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:52.722755 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:53.766810 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:54.808625 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:55.850999 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:55:56.894154 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:55:57.937317 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:55:58.115773 Outgoing connection to peer 195.208.39.210:9333 established. p2pool version: 1600 '16.0'
+2017-11-03 21:55:58.143388 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:55:58.143542  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:55:58.979472 Requesting parent share 3090acd6 from 195.208.39.210:9333
+2017-11-03 21:56:00.196634 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:56:01.144134 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 3 (0 incoming)
+2017-11-03 21:56:01.144331  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:56:02.105802 RECV sharereply daf8c7c0e8115d9aa299d740518706ed9d56d97129bec3910839e0f5e78ad5a7000110fd5402fe02000020f87f1bbbb941805e017049cbe57300f1758c5f5e98798e000000000000000000be055d59308d01189fce1937c346e1a029006a5f6899c14df6...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:56:02.110349 Lost peer 195.208.39.210:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:56:03.130001 Peer sent entire transaction e1b16a3fe6263f1e4e621d420bf42bdc69a0089cfe5043c926664d8a6a359144 that was already received
+2017-11-03 21:56:03.448558 Requesting parent share f6a1460a from 194.187.217.34:9333
+2017-11-03 21:56:03.463204 RECV sharereply 0ccb00b0b76ccd59812a81cb73664f86273f43dc885ebad22b74894ed5d8aa0e000110fde116fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d00000000000000000074e5fc59bdc1001870e192d3a54c2011b90f26506b990b0ef8...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:56:03.465360 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:56:03.465948 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:04.069664 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:56:04.417679 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:56:04.417877  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:56:04.587242 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:05.092402 Peer sent entire transaction e1b16a3fe6263f1e4e621d420bf42bdc69a0089cfe5043c926664d8a6a359144 that was already received
+2017-11-03 21:56:05.415851 RECV sharereply 0caec4c77158d8711f22d8565a0cf7739b592154e40cbad4cdec570a8a85853a000110fde116fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d00000000000000000074e5fc59bdc1001870e192d3a54c2011b90f26506b990b0ef8...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:56:05.417236 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:56:05.627905 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:06.669734 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:07.418540 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:56:07.418734  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:56:07.711485 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:08.754665 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:09.798702 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:10.847123 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:11.888612 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:12.931373 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:13.975548 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:14.385160 Outgoing connection to peer 80.64.65.87:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:56:15.017118 Requesting parent share b8e31bcd from 80.64.65.87:9333
+2017-11-03 21:56:16.445288 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:56:16.445527  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:56:17.160033 RECV sharereply 7d86785c4714ecefea05bbe21559c73dfdb518a64e4da81966e1b0cdfb491bcc000110fde116fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d00000000000000000074e5fc59bdc1001870e192d3a54c2011b90f26506b990b0ef8...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:56:17.181865 Lost peer 80.64.65.87:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:56:17.182430 Requesting parent share b8e31bcd from 72.14.191.28:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:56:18.338984 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:19.380463 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:19.450047 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:56:19.450401  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:56:20.447097 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:21.569175 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:22.611903 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:23.654994 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:24.703120 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:25.748456 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:26.440948 Incoming connection from peer 24.53.49.199:57292 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:56:26.790279 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:27.803889 RECV sharereply ed3e1798cd275f49307be91ffab06ba2a75cc2a72ac92e7168e424a876a163aa000110fde116fe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d00000000000000000074e5fc59bdc1001870e192d3a54c2011b90f26506b990b0ef8...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:56:27.810837 Lost peer 24.53.49.199:57292 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:56:27.877050 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:28.748909 Outgoing connection to peer 217.168.143.169:9333 established. p2pool version: 1700 '17.0-4-g68f653f'
+2017-11-03 21:56:28.933741 Requesting parent share f6a1460a from 217.168.143.169:9333
+2017-11-03 21:56:30.607961 Peer sent entire transaction 2b696e6d8e92cdfb9aab2c1647d13191cc432a569f157720c1959e30bf4c23fd that was already received
+2017-11-03 21:56:31.133861 Peer 217.168.143.169:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 21:56:31.134231 Bad peer banned: ('217.168.143.169', 9333)
+2017-11-03 21:56:31.156146 Lost peer 217.168.143.169:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:56:31.161862 Requesting parent share b8e31bcd from 72.14.191.28:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:56:32.255303 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:33.300556 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:34.343278 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:34.740231 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:56:34.740740  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:56:35.384654 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:36.425787 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:37.468145 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:38.511126 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:39.556199 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:40.604743 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:41.648727 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:42.690153 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:43.734979 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:44.777999 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:45.820168 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:46.862171 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:47.922187 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:48.969073 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:49.743364 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:56:49.743614  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:56:50.012664 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:56:51.062329 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:52.108427 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:53.150704 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:54.192416 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:55.234257 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:56.276404 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:57.320308 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:56:58.362155 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:56:59.405694 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:00.447303 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:01.489750 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:02.531514 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:03.573633 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:04.616047 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:04.746040 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:57:04.746407  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:57:05.657492 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:06.699797 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:07.742435 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:08.789865 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:09.834131 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:10.878852 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:11.920715 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:12.962427 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:14.019697 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:15.061736 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:16.104734 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:17.148391 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:18.193169 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:19.236047 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:19.748397 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:57:19.748625  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:57:20.286895 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:21.329191 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:22.372252 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:23.417545 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:24.460368 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:25.501938 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:26.543963 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:27.585300 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:28.628104 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:29.675437 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:30.723899 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:31.773419 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:32.814969 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:33.875171 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:34.751535 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:57:34.751747  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:57:34.916894 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:35.958965 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:37.004082 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:38.047050 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:39.089826 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:40.139197 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:41.181645 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:42.223511 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:43.265384 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:44.307953 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:45.349140 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:46.391707 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:47.434099 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:48.475588 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:49.517257 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:49.754848 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:57:49.755037  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:57:50.559507 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:51.601997 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:52.644939 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:53.688729 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:54.750858 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:55.793070 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:57:56.834328 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:57:58.050308 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:57:59.102909 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:00.144720 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:01.187454 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:04.544382 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:04.757648 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:58:04.757898  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:58:05.588829 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:06.630185 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:07.672649 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:08.717799 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:09.761827 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:10.807503 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:11.848840 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:12.902734 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:13.945290 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:14.991527 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:16.038724 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:17.080824 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:18.125982 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:19.167461 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:19.760422 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:58:19.760637  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:58:20.209157 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:21.250752 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:22.293548 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:23.335653 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:24.379168 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:25.420559 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:26.462101 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:27.503406 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:28.544986 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:29.587883 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:30.642415 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:31.684874 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:32.194456 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 21:58:32.727583 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:33.720680 RECV sharereply ee53028a8cd437e92dd191cf40a0956897fa774d2b4002c9a316ee84cf81b0f2000110fd431cfe00000020d3a261732894fbcfc821ce63d3ea931645b684513cef7d00000000000000000093e5fc59bdc10018266b9ddf1addfb207817dc8214027c0887...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 21:58:33.735048 Handshake timed out, disconnecting from 69.164.211.28:9333
+2017-11-03 21:58:33.739837 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:58:33.770062 Requesting parent share f6a1460a from 72.14.191.28:9333
+Unhandled Error
+Traceback (most recent call last):
+  File "/root/p2pool/p2pool/main.py", line 675, in run
+    reactor.run()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 1194, in run
+    self.mainLoop()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 1203, in mainLoop
+    self.runUntilCurrent()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 825, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/bitcoin/stratum.py", line 38, in _send_work
+    x, got_response = self.wb.get_work(*self.wb.preprocess_request('' if self.username is None else self.username))
+  File "/root/p2pool/p2pool/bitcoin/worker_interface.py", line 129, in get_work
+    x, handler = self._inner.get_work(*args)
+  File "/root/p2pool/p2pool/work.py", line 245, in get_work
+    raise jsonrpc.Error_for_code(-12345)(u'p2pool is downloading shares')
+p2pool.util.jsonrpc.NarrowError: -12345 p2pool is downloading shares
+
+2017-11-03 21:58:34.792920 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:58:34.793089  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:58:34.883562 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:35.926024 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:36.971300 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:38.013808 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:39.056037 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:40.105824 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:41.151769 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:42.199829 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:43.241303 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:44.289549 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:45.331784 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:46.374484 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:47.416677 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:48.458304 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:49.501328 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:49.795896 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:58:49.796074  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:58:50.543373 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:51.586065 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:52.627971 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:53.670773 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:54.712701 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:58:55.756083 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:56.797356 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:57.838515 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:58:58.879751 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:58:59.924776 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:00.969211 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:01.105910 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:59:01.798247 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:59:01.798498  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:59:02.010661 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:03.052882 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:04.095862 Requesting parent share b8e31bcd from 72.14.191.28:9333
+Unhandled Error
+Traceback (most recent call last):
+  File "/root/p2pool/p2pool/main.py", line 675, in run
+    reactor.run()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 1194, in run
+    self.mainLoop()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 1203, in mainLoop
+    self.runUntilCurrent()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 825, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/bitcoin/stratum.py", line 38, in _send_work
+    x, got_response = self.wb.get_work(*self.wb.preprocess_request('' if self.username is None else self.username))
+  File "/root/p2pool/p2pool/bitcoin/worker_interface.py", line 129, in get_work
+    x, handler = self._inner.get_work(*args)
+  File "/root/p2pool/p2pool/work.py", line 245, in get_work
+    raise jsonrpc.Error_for_code(-12345)(u'p2pool is downloading shares')
+p2pool.util.jsonrpc.NarrowError: -12345 p2pool is downloading shares
+
+2017-11-03 21:59:05.138757 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:06.181098 Requesting parent share 3090acd6 from 188.0.182.10:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 21:59:16.114374 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:59:16.115721 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:16.801700 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:59:16.801922  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:59:17.159301 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:18.202332 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:19.243976 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:20.285096 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:21.337149 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:22.378390 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:23.420157 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:24.463489 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:25.504674 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:26.545903 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:27.588050 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:28.665558 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:29.707635 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:30.750940 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:31.793797 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:31.805852 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:59:31.806005  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:59:32.836952 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:33.878471 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:34.921020 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:35.881396 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:59:35.962389 Requesting parent share b8e31bcd from 188.0.182.10:9333
+2017-11-03 21:59:37.806726 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:59:37.807157  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+Unhandled Error
+Traceback (most recent call last):
+  File "/root/p2pool/p2pool/main.py", line 675, in run
+    reactor.run()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 1194, in run
+    self.mainLoop()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 1203, in mainLoop
+    self.runUntilCurrent()
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/base.py", line 825, in runUntilCurrent
+    call.func(*call.args, **call.kw)
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/bitcoin/stratum.py", line 38, in _send_work
+    x, got_response = self.wb.get_work(*self.wb.preprocess_request('' if self.username is None else self.username))
+  File "/root/p2pool/p2pool/bitcoin/worker_interface.py", line 129, in get_work
+    x, handler = self._inner.get_work(*args)
+  File "/root/p2pool/p2pool/work.py", line 245, in get_work
+    raise jsonrpc.Error_for_code(-12345)(u'p2pool is downloading shares')
+p2pool.util.jsonrpc.NarrowError: -12345 p2pool is downloading shares
+
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 21:59:50.885722 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 21:59:50.886322 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:51.927424 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:52.812792 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 21:59:52.814223  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:59:52.968693 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:54.011122 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:55.052739 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:56.095642 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 21:59:57.150055 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 21:59:57.507124 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 21:59:58.192182 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 21:59:58.815209 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 21:59:58.815383  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 21:59:59.236776 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:00.361498 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:01.406656 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:02.450420 Requesting parent share f6a1460a from 188.0.182.10:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 22:00:12.514711 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:00:12.515768 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:13.558250 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:13.817167 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:00:13.817393  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:00:14.600109 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:15.642637 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:16.665129 Outgoing connection to peer 213.184.8.22:9333 established. p2pool version: 1700 '17.0-4-g68f653f-dirty'
+2017-11-03 22:00:16.683885 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:16.817828 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 22:00:16.818033  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:00:17.725427 Requesting parent share f6a1460a from 213.184.8.22:9333
+2017-11-03 22:00:20.931118 Peer 213.184.8.22:9333 misbehaving, will drop and ban. Reason: share PoW invalid
+2017-11-03 22:00:20.931329 Bad peer banned: ('213.184.8.22', 9333)
+2017-11-03 22:00:21.364906 Lost peer 213.184.8.22:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:00:21.370016 Requesting parent share f6a1460a from 72.14.191.28:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:00:22.493812 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:22.818846 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:00:22.819187  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:00:23.535427 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:24.576870 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:25.618814 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:26.661513 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:27.703025 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:28.744822 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:29.786370 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:30.828395 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:31.870072 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:32.911088 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:33.952499 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:34.994234 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:36.036020 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:37.078393 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:37.821646 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:00:37.821851  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:00:38.122370 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:39.165883 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:40.215509 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:41.259758 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:43.608644 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:44.652559 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:45.694343 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:46.735553 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:47.813618 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:48.854793 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:49.896497 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:50.942065 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:51.986090 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:52.824323 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:00:52.824708  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:00:53.027975 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:54.069990 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:55.111732 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:00:56.159351 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:57.202488 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:00:58.248643 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:00:59.290502 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:00.332122 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:01.374005 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:02.415964 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:03.458068 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:04.500726 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:05.566899 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:06.610436 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:07.658057 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:07.827372 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:01:07.827678  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:01:08.699597 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:09.744878 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:10.794649 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:11.836977 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:12.884708 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:13.928134 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:14.971751 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:16.015413 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:17.075037 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:18.119365 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:19.162853 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:20.212181 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:21.255189 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:22.296591 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:22.831417 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:01:22.831670  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:01:23.338995 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:24.381325 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:25.423422 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:26.464627 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:27.255728 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 22:01:27.509264 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:28.811687 Requesting parent share b8e31bcd from 194.187.217.34:9333
+2017-11-03 22:01:28.818008 RECV sharereply d2ee6c01f3d2bd7bb563aa7b3431af1eb46126be33f6a70a4e192c2cc0484762000110fd7d12fe00000020acb5f2353fca5286e75f6e90aeb06d4aa5a9e1ca60fe23000000000000000000d1e6fc59bdc1001844a2e74da22a9290fa5eccb82a0bff4548...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 22:01:28.824491 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:01:28.825174 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:29.938312 Outgoing connection to peer 195.208.39.210:9333 established. p2pool version: 1600 '16.0'
+2017-11-03 22:01:29.965809 Requesting parent share b8e31bcd from 195.208.39.210:9333
+2017-11-03 22:01:31.832767 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 22:01:31.833048  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+Error in DeferredResource handler:
+Traceback (most recent call last):
+  File "/root/p2pool/p2pool/util/deferred_resource.py", line 24, in render
+    defer.maybeDeferred(resource.Resource.render, self, request).addCallbacks(finish, finish_error)
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 150, in maybeDeferred
+    result = f(*args, **kw)
+  File "/usr/lib/python2.7/dist-packages/twisted/web/resource.py", line 250, in render
+    return m(request)
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1274, in unwindGenerator
+    return _inlineCallbacks(None, gen, Deferred())
+--- <exception caught here> ---
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/defer.py", line 1128, in _inlineCallbacks
+    result = g.send(result)
+  File "/root/p2pool/p2pool/web.py", line 198, in render_GET
+    res = yield self.func(*self.args)
+  File "/root/p2pool/p2pool/web.py", line 347, in <lambda>
+    new_root.putChild('best_share_hash', WebInterface(lambda: '%064x' % node.best_share_var.value))
+exceptions.TypeError: %x format: a number is required, not NoneType
+
+2017-11-03 22:01:42.057609 RECV sharereply cc9782592457c8c989e21da7e995a434a3026c1ccc4b7effd6133a30bc0d3a3a000110fd5402fe02000020f87f1bbbb941805e017049cbe57300f1758c5f5e98798e000000000000000000be055d59308d01189fce1937c346e1a029006a5f6899c14df6...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 22:01:42.138271 Lost peer 195.208.39.210:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:01:43.059660 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:44.130743 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:45.106220 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:01:45.106713  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:01:45.175434 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:46.219571 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:47.262031 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:48.305356 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:49.347286 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:50.389564 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:51.448727 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:52.494632 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:53.537994 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:54.580738 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:55.622162 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:01:56.664202 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:57.709794 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:01:58.753569 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:01:59.797719 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:00.110577 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:02:00.111069  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:02:00.839300 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:01.882106 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:02.924182 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:03.967905 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:05.012239 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:06.054481 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:07.097546 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:08.141648 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:09.183197 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:10.238081 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:11.303239 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:12.349196 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:13.392210 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:14.434685 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:15.114675 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:02:15.115009  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:02:15.478169 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:16.521107 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:17.566208 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:18.609972 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:19.657337 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:20.698518 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:21.740169 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:22.782139 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:23.826761 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:24.869690 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:25.913400 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:26.955094 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:27.996839 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:29.040005 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:30.083340 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:30.117594 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:02:30.117819  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:02:31.132557 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:32.174206 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:33.217276 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:34.260752 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:35.303527 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:36.345869 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:37.388844 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:38.431895 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:39.484845 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:40.540475 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:41.601547 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:02:42.645740 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:43.692566 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:44.735825 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:45.122894 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:02:45.123206  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:02:45.779340 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:46.829694 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:47.880995 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:48.924447 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:02:49.456040 Outgoing connection to peer 195.208.39.210:9333 established. p2pool version: 1600 '16.0'
+2017-11-03 22:02:49.966565 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:02:51.031959 Requesting parent share b8e31bcd from 195.208.39.210:9333
+2017-11-03 22:02:51.124151 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 22:02:51.124514  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:02:55.068724 RECV sharereply b849fe7ba726303b1c56ac16717f07560375b87504e4d5afbbbaa67379d38e6a000110fd5402fe02000020f87f1bbbb941805e017049cbe57300f1758c5f5e98798e000000000000000000be055d59308d01189fce1937c346e1a029006a5f6899c14df6...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 22:02:55.089436 Lost peer 195.208.39.210:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:02:55.133596 Incoming connection from peer 163.5.84.142:33409 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 22:02:56.080342 Requesting parent share 3090acd6 from 163.5.84.142:33409
+2017-11-03 22:02:57.125441 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (1 incoming)
+2017-11-03 22:02:57.125695  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:02:57.467994 Peer sent entire transaction 639294f162bcd5291d9d31e00903fb11e3f01d7ea2b89267de3084c73a6f7d61 that was already received
+2017-11-03 22:02:58.056698 RECV sharereply 2653070341020c09ec94ed73f194984bf0d8f9c7c70bf2dc6a8a8d4bf59d9a77000110fdfd0bfe0000002014a2bb6dabe89d8898fc5ea4707cdfa60fcf8a3eb8481d000000000000000000f1d5ed5930eb0018cb13afd8373b327b96838717ed7fe2856d...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 22:02:58.084206 Lost peer 163.5.84.142:33409 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:02:59.080393 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:00.126229 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:03:00.126458  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:03:00.130735 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:01.172764 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:02.213869 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:03.270954 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:04.313088 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:05.355949 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:06.399510 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:07.441916 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:08.484068 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:09.530525 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:10.591550 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:11.633118 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:12.675364 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:13.717188 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:14.760157 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:15.128679 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:03:15.128953  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:03:15.803055 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:16.846446 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:17.891726 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:18.935120 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:19.982664 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:21.024300 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:22.069892 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:23.112355 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:24.154406 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:25.195292 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:26.236541 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:27.278272 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:28.324856 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:29.369937 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:30.131442 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:03:30.131818  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:03:30.411411 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:31.455334 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:32.501091 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:33.544378 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:34.587913 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:35.632635 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:36.673916 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:37.740490 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:38.788787 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:39.861802 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:40.936474 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:41.279296 Outgoing connection to peer 194.187.217.34:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 22:03:41.980307 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:42.450894 RECV sharereply a489f044720f629598619a42c293f6a0c44157055d2f2abeb2cb42f3684a6c63000110fd790cfe00000020acb5f2353fca5286e75f6e90aeb06d4aa5a9e1ca60fe230000000000000000008be7fc59bdc1001898c846a52c808421f857934b8c04d618ff...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 22:03:42.455405 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 22:03:42.455493  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:03:42.471068 Lost peer 194.187.217.34:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:03:43.474893 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:03:44.517143 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:45.455880 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:03:45.456054  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:03:45.558832 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:46.601319 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:47.643539 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:48.685372 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:49.730216 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:50.788338 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:51.830412 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:03:52.872568 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:53.914951 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:54.956513 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:56.000616 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:57.045736 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:03:59.503951 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:00.459423 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:04:00.459658  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:04:00.546334 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:01.587825 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:02.629405 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:02.973682 Outgoing connection to peer 188.0.182.10:9333 established. p2pool version: 1600 '16.0-4-gde1be30'
+2017-11-03 22:04:03.460094 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 22:04:03.460292  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:04:03.670737 Requesting parent share b8e31bcd from 188.0.182.10:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 22:04:17.979616 Lost peer 188.0.182.10:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:04:17.981143 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:18.467894 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:04:18.468119  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:04:19.023798 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:19.690925 Outgoing connection to peer 109.190.203.126:9333 established. p2pool version: 1700 '17.0'
+2017-11-03 22:04:20.071456 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:21.113344 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:21.468457 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 2 (0 incoming)
+2017-11-03 22:04:21.468614  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:04:22.154989 Requesting parent share f6a1460a from 109.190.203.126:9333
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.defer.TimeoutError: in GenericDeferrer
+
+2017-11-03 22:04:34.699008 Lost peer 109.190.203.126:9333 - Connection was aborted locally, using.
+in download_shares:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:04:34.699839 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:35.741877 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:36.471203 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:04:36.471451  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:04:36.783510 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:37.824955 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:38.866803 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:39.911428 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:40.953340 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:41.995999 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:43.040479 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:44.084522 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:45.129548 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:46.171736 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:47.214454 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:48.256724 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:49.298891 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:50.340376 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:04:51.382687 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:51.473567 P2Pool: 0 shares in chain (0 verified/5 total) Peers: 1 (0 incoming)
+2017-11-03 22:04:51.473770  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-03 22:04:51.955217 Outgoing connection to peer 80.64.65.87:9333 established. p2pool version: 1600 '16.0-4-gde1be30-dirty'
+2017-11-03 22:04:52.426336 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:53.300634 RECV sharereply ad31cadf63ef5e7f3b481e75d58f30f0a824941238633cb00c1e9b372f38f9f0000110fd730efe00000020acb5f2353fca5286e75f6e90aeb06d4aa5a9e1ca60fe23000000000000000000f7e7fc59bdc1001888c886db36f82b80bf45a01efb0f60bf6a...
+Error handling message: (see RECV line)
+Traceback (most recent call last):
+  File "/usr/lib/python2.7/dist-packages/twisted/internet/tcp.py", line 215, in _dataReceived
+    rval = self.protocol.dataReceived(data)
+  File "/root/p2pool/p2pool/p2p.py", line 172, in new_dataReceived
+    old_dataReceived(data)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 27, in dataReceived
+    self.dataReceived2(data)
+  File "/root/p2pool/p2pool/util/datachunker.py", line 40, in _DataChunker
+    wants = receiver.send(buf.get(wants))
+--- <exception caught here> ---
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 57, in dataReceiver
+    self.packetReceived(command, type_.unpack(payload, self.ignore_trailing_payload))
+  File "/root/p2pool/p2pool/p2p.py", line 91, in packetReceived
+    p2protocol.Protocol.packetReceived(self, command, payload2)
+  File "/root/p2pool/p2pool/util/p2protocol.py", line 71, in packetReceived
+    handler(**payload2)
+  File "/root/p2pool/p2pool/p2p.py", line 363, in handle_sharereply
+    res = [p2pool_data.load_share(share, self.node.net, self.addr) for share in shares if share['type'] >= p2pool_data.Share.VERSION]
+  File "/root/p2pool/p2pool/data.py", line 55, in load_share
+    return Share(net, peer_addr, Share.get_dynamic_types(net)['share_type'].unpack(share['contents']))
+  File "/root/p2pool/p2pool/data.py", line 321, in __init__
+    self.gentx_before_refhash,
+  File "/root/p2pool/p2pool/data.py", line 37, in check_hash_link
+    assert len(hash_link['extra_data']) == max(0, extra_length - len(const_ending))
+exceptions.AssertionError: 
+
+2017-11-03 22:04:53.305414 Lost peer 80.64.65.87:9333 - Connection was aborted locally, using.
+in handle_share_hashes:
+Traceback (most recent call last):
+Failure: twisted.internet.error.ConnectionAborted: Connection was aborted locally, using.
+
+2017-11-03 22:04:53.686945 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:04:54.746573 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:55.787444 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:56.829070 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:57.870075 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:58.912134 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:04:59.955122 Requesting parent share b8e31bcd from 72.14.191.28:9333
+2017-11-03 22:05:00.997325 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:05:02.039401 Requesting parent share f6a1460a from 72.14.191.28:9333
+2017-11-03 22:05:03.082295 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:05:04.126749 Requesting parent share 3090acd6 from 72.14.191.28:9333
+2017-11-03 22:05:04.690315 Lost peer 72.14.191.28:9333 - Connection to the other side was lost in a non-clean fashion: Connection lost.
+2017-11-04 16:22:50.847287 p2pool (version 17.0-7-gdf9bfca-dirty)
+2017-11-04 16:22:50.853600 
+2017-11-04 16:22:50.853751 Testing bitcoind RPC connection to 'http://127.0.0.1:33336/' with username 'kzv_rpc'...
+2017-11-04 16:22:57.088903     ...success!
+2017-11-04 16:22:57.093773     Current block hash: 2e01bc3148aadc4d5b15ccab79fb9783a17d3a9801bd001d01
+2017-11-04 16:22:57.093843     Current block height: 14419
+2017-11-04 16:22:57.093891 
+2017-11-04 16:22:57.093964 Testing bitcoind P2P connection to '127.0.0.1:33333'...
+2017-11-04 16:22:57.580947     ...success!
+2017-11-04 16:22:57.581085 
+2017-11-04 16:22:57.581163 Determining payout address...
+2017-11-04 16:22:57.582684     Loaded cached address: MMWPF6xP7pBGureAArJUGmxouHPMJeiHxj...
+2017-11-04 16:22:57.620850     ...success! Payout address: MMWPF6xP7pBGureAArJUGmxouHPMJeiHxj
+2017-11-04 16:22:57.620982 
+2017-11-04 16:22:57.621065 Loading shares...
+2017-11-04 16:22:57.655191     ...done loading 1 shares (1 verified)!
+2017-11-04 16:22:57.655364 
+2017-11-04 16:22:57.655413 Initializing work...
+2017-11-04 16:22:57.900784     ...success!
+2017-11-04 16:22:57.900909 
+2017-11-04 16:22:57.900968 Joining p2pool network using port 39333...
+2017-11-04 16:22:57.905175     ...success!
+2017-11-04 16:22:57.905240 
+2017-11-04 16:22:57.971818 Listening for workers on '' port 39332...
+2017-11-04 16:22:58.641448     ...success!
+2017-11-04 16:22:58.651891 
+2017-11-04 16:22:58.651950 Started successfully!
+2017-11-04 16:22:58.652003 Go to http://127.0.0.1:39332/ to view graphs and statistics!
+2017-11-04 16:22:58.652066 Donating 1.0% of work towards P2Pool's development. Thank you!
+2017-11-04 16:22:58.652119 You can increase this amount with --give-author argument! (or decrease it, if you must)
+2017-11-04 16:22:58.652164 
+2017-11-04 16:22:58.705809 Peer 162.243.251.161:38236 misbehaving, will drop and ban. Reason: was connected to self
+2017-11-04 16:22:58.706002 Bad peer banned: ('162.243.251.161', 38236)
+2017-11-04 16:22:58.706841 Peer 127.0.0.1:39333 misbehaving, will drop and ban. Reason: was connected to self
+2017-11-04 16:22:58.706933 Bad peer banned: (u'127.0.0.1', 39333)
+2017-11-04 16:23:01.661384 P2Pool: 1 shares in chain (1 verified/1 total) Peers: 0 (0 incoming)
+2017-11-04 16:23:01.662098  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-04 16:23:09.379239 log 1
+2017-11-04 16:23:09.409966 log 2
+2017-11-04 16:23:09.426018 New work for worker! Difficulty: 0.999985 Share difficulty: 1.000000 Total block value: 50.045000 MC including 45 transactions
+2017-11-04 16:23:16.666015 P2Pool: 1 shares in chain (1 verified/1 total) Peers: 0 (0 incoming)
+2017-11-04 16:23:16.666308  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
+2017-11-04 16:23:31.669905 P2Pool: 1 shares in chain (1 verified/1 total) Peers: 0 (0 incoming)
+2017-11-04 16:23:31.670174  Local: 0H/s in last 0.0 seconds Local dead on arrival: ??? Expected time to share: ???
