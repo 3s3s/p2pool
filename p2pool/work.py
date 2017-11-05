@@ -285,7 +285,6 @@ class WorkerBridge(worker_interface.WorkerBridge):
                     share_type = previous_share_type
         
         if desired_share_target is None:
-	    print 'log 1'
             desired_share_target = 2**256-1
             local_hash_rate = self._estimate_local_hash_rate()
             if local_hash_rate is not None:
@@ -339,21 +338,17 @@ class WorkerBridge(worker_interface.WorkerBridge):
         mm_later = [(dict(aux_work, target=aux_work['target'] if aux_work['target'] != 'p2pool' else share_info['bits'].target), index, hashes) for aux_work, index, hashes in mm_later]
         
         if desired_pseudoshare_target is None:
-	    print 'log 2'
             target = 2**256-1
             local_hash_rate = self._estimate_local_hash_rate()
             if local_hash_rate is not None:
                 target = min(target,
                     bitcoin_data.average_attempts_to_target(local_hash_rate * 1)) # limit to 1 share response every second by modulating pseudoshare difficulty
         else:
-	    print 'log3'
             target = desired_pseudoshare_target
         target = max(target, share_info['bits'].target)
         for aux_work, index, hashes in mm_later:
             target = max(target, aux_work['target'])
         target = math.clip(target, self.node.net.PARENT.SANE_TARGET_RANGE)
-	#target = self.node.net.PARENT.SANE_TARGET_RANGE
-	#target = math.clip(0,self.node.net.PARENT.SANE_TARGET_RANGE) # self.node.net.PARENT.SANE_TARGET_RANGE)
         
         getwork_time = time.time()
         lp_count = self.new_work_event.times
